@@ -1,0 +1,893 @@
+<html lang="en" class="h-100"><head>
+    <title>Mission: Meltdown</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;700;800&family=Montserrat+Alternates:wght@100;400;600;800;900&family=Rubik+80s+Fade&family=Rubik+Dirt&family=Rubik+Distressed&family=Rubik+Doodle+Shadow&family=Rubik+Doodle+Triangles&family=Rubik+Moonrocks&family=Rubik:wght@400;500;600&&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch+Pop&display=swap');
+		
+		
+		@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+		
+			/* ADAM */
+			
+			body { 
+			  font-weight: 400;
+			  font-style: normal;}
+			h1,h2,h3,h4,h5,h6,p,li,div {font-family: "Lato", sans-serif;}
+			p,li,div {font-weight:300}
+			h1,h2,h3 {font-weight:400}
+			
+			p,li {font-size:18px;}
+			.bn-body li {margin-bottom:20px;}
+			.quote {max-width:80%; margin:20px auto; font-family:serif}
+			.you_chose_time {border:1px solid #ccc; padding:20px; border-radius:12px;}
+			
+			
+			@media screen and (min-width: 1024px) {
+			   .container {max-width:760px !important;}
+			}
+			
+			@media screen and (max-width: 600px) {
+				  .container {
+					max-width: 100%; padding:0px !important;
+				  }
+				}
+				
+			/* MAYBE */
+			
+			.atlas-task-card z-1 {box-shadow:0px 0px 30px -10px black !important;}
+			.atlas-task-card z-1 {border-radius:20px !important;}
+			
+			@media screen and (max-width: 600px) {
+				.atlas-task-card z-1 {max-width:98% !important; width:98% !important; margin:0 auto; padding:10px;}
+				
+			}
+      /* commenting this */
+			/* nav {background:rgba(0,0,0,0.5) !important;} */
+			body {background-color:black; background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/4937592/pexels-photo-4937592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) fixed; background-size:cover;}
+			
+      /* commenting this */
+			/* .navbar-dark {background-image: url(https://atlasmissionapp.com/img/50x50_BLUE_TEXTURE.png) !important; background:transparent !important; } */
+			
+			.nav-scroller {margin-top:60px; background:transparent !important; display:none;}
+
+			h1,h2,h3,h4 {color:#003366; mask-image: url(https://images.pexels.com/photos/4937592/pexels-photo-4937592.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2); mask-repeat: no-repeat; }
+
+			.btn-next-step {background-color: #003366; border-color: #336699; color:white;}
+			.btn-next-step:hover {background-color: #336699; border-color: #336699; color:white;}
+			
+			.btn-primary { background-color: #003366; border-color: #336699; }
+			.time-estimate {float:right; margin-top:-32px; opacity:0.6}
+			
+			h3 {
+				-webkit-transition: all 1s ease;
+				-moz-transition: all 1s ease;
+				-o-transition: all 1s ease;
+				-ms-transition: all 1s ease;
+			}
+			
+			blockquote {padding:20px 20px 0px 20px; border-radius:12px; background:#efefef;}
+			blockquote h3, blockquote p {font-family:Georgia, serif !important; margin:0px;}
+	</style>
+
+	
+	<!-- Custom styles for this template -->
+	
+  </head>
+  <body class="bg-body-tertiary">
+	  <div id="starfield"></div>
+	
+
+    <!-- add sticky_top and position sticky -->
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+	  <div class="container-fluid">
+		<img class="me-3" src="../img/atlasmissionlogo_smaller.png" alt="" width="48" height="38">
+		<a class="navbar-brand" href="#" style="display: block;">Parents Hub</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+		  <ul class="navbar-nav me-auto mb-2 mb-md-0">
+			<li class="nav-item">
+			  <a class="nav-link active" aria-current="page" href="#">Home</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#">Bonuses</a>
+			</li>
+			<li class="nav-item">
+				  <a class="nav-link" href="#">Emergency!</a>
+			</li>
+		  </ul>
+		  <div class="d-flex" role="search">
+			<a class="btn btn-outline-light" href="settings/">Settings</a>
+		  </div>
+		</div>
+	  </div>
+	</nav>
+
+
+<!--<div class="nav-scroller bg-body shadow-sm">
+  <nav class="nav" aria-label="Secondary navigation">
+	<a class="nav-link active" aria-current="page" href="#">Mission Meltdown</a>
+	<a class="nav-link" href="#">
+	  Tips
+	  <span class="badge text-bg-light rounded-pill align-text-bottom">27</span>
+	</a>
+	<a class="nav-link" href="#">Emergency Quiz</a>
+	<a class="nav-link" href="#">Lessons</a>
+	<a class="nav-link" href="#">Bonuses</a>
+  </nav>
+</div>-->
+<!-- add position relative -->
+<main class="container position-relative">
+  <!-- removing these br -->
+	<!-- <br><br><br><br> -->
+  
+  
+  <!-- <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm" style="background-image: url(https://atlasmissionapp.com/img/50x50_BLUE_TEXTURE.png) !important;">
+	<img class="me-3" src="../img/atlasmissionlogo_smaller.png" alt="" width="48" height="38">
+	
+	
+	<div class="lh-1">
+	  <h1 class="h6 mb-0 text-white lh-1">Mission: Meltdown</h1>
+	  <small>Let's go!</small>
+	</div>
+  </div>-->
+	  
+	  <div class="my-3 p-3 p-md-4 bg-body rounded shadow-sm atlas-task-card" style="display: block;">
+	
+  <h6 class="border-bottom pb-2 mb-0">Day 1: Understanding Meltdowns &amp; Building your strategy.</h6>
+  <div class="text-body-secondary">
+		<br>
+		
+		<h1 style="text-align:center; font-size:100px;">🏆</h1>
+
+		<p>Welcome, awesome parent!</p>
+		
+		<p>By joining this program you've already done something amazing for you and your offspring!</p>
+		<p></p>
+		<p>So your first task is - <b>give yourself a pat on the shoulder</b>. You did good! 🥳</p>
+		
+		<!--
+		<h6 class="border-bottom pb-2 mb-0">Let's set some expectations:</h6>
+		
+		<p>Joining the program is your first step towards less meltdowns, and better emotional regulations. However, it's up to you to stick to the program. If you do everything correctly, you will see a significant drop in meltdowns, maybe even zero. But they will re-appear from time to time as habits erode and your child goes through new experiences.</p>
+		
+		<p>The good news? We're always here, you can come back and go through the whole process again, or just parts of it. And we know you're busy so it's all designed to help you get the quickest results in the least amount of time possible.</p>
+		-->
+		
+		<br><br>
+		<p>Now if you're ready to start - hit the button below:</p>
+
+	</div>
+	<hr>
+	<small class="d-block text-end mt-3">
+		<button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+			Let's Start! &nbsp;
+			<i class="fa-solid fa-arrow-right fa-beat-fade"></i>
+		  </button>
+  </small>
+  </div><!--/bg-body-->
+	  
+<div class="my-3 p-3 p-md-4 bg-body rounded shadow-sm atlas-task-card" style="display: none;">  
+  <h6 class="border-bottom pb-2 mb-0">Day 1: Setting Expectations</h6>
+	<div class="text-body-secondary">
+		  <br>
+		  
+		  <h1>How does this work?</h1>
+		  
+		  <br>
+		  
+		  <p>Well here's a quick overview of what you need to know:</p>
+		  <style type="text/css">
+			  
+			  .how_work li {border-bottom:1px dotted; margin: 0 0 30px 0; font-size:22px; padding:0 0 20px 0;}
+			  .how_work li p {font-size:22px;}
+			  .how_work li .whenwhen {border:1px solid; padding:20px; border-radius:20px; max-width:100%; margin:20px;}
+			  
+			  @media (max-width: 600px) { 
+				  
+				.how_work li .whenwhen {padding:10px; margin:0px !important;}
+			  }
+			  
+			  .how_work li .whenwhen p {font-size:18px;}
+		  </style>
+		  <ol class="how_work">
+			 
+			 <li>Except for day 1, which is slightly longer, you'll need just <b>10-15 minutes daily</b> for this program. Most of it can be done on your phone during free moments like waiting in line or commuting. 📱</li>
+			 <li>You'll be given exercises to do with your child <b>during regular activities</b> like bath time, walks, play time, or dinner. <b>No need to set aside extra time!</b> 🛀🚶&zwj;♂️🍽️</li>
+			 
+			 <li>The program works on both phone and desktop. 💻</li>
+			 <li>The program is designed to be effective <b>whether or not</b> your child experiences meltdowns during the 7-day period. 🌈</li>
+			 
+			  
+			 
+		  </ol>
+		  	
+	<!--
+		  <p>💡 Important: knowledge is useless without practice. You need to actually do what we tell you in order to see results.</p>
+		-->
+		  <br>
+		  
+		  <h1>Our "3-act" program:</h1>
+		 
+		  <br>
+		  
+		  <p>
+			  The program is split into 3 parts:
+		  </p>
+		  
+		  <div class="list-group">
+			  <b class="list-group-item list-group-item-action list-group-item-warning " aria-current="true">
+				  BEFORE
+				  (Days 1+2)
+				  Preparing For Tantrums
+			  </b>
+		  	  <b class="list-group-item list-group-item-action list-group-item-danger " aria-current="true">
+					  DURING
+					  (Days 3-5)
+					  Tantrum Management
+			  </b>
+			  <b class="list-group-item list-group-item-action list-group-item-success " aria-current="true">
+					AFTER
+					(Days 6+7)
+					Long Term Prevention
+			   </b>
+			
+		  </div>
+		  <br>
+		  <h3>"Is day 1... Today?"</h3>
+		  <br>
+		  
+		  <p>Good question! </p>
+		  <p>Unlike days 2-7, day 1 requires about 20 minutes in order to customize the program and cover the basics.</p>
+		  
+		  <p>We recommend you start on a dayyou have 20-25 minutes available and can commit to the full 7 days.</p>
+		  
+		  <p>🗓️ Your only task now: pick a start date that works for you!</p>
+		  
+		  
+		  
+		    
+				  </div>
+	  <hr>
+	  <small class="d-block text-end mt-3">
+		  <button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+			  Find time for this! &nbsp;
+			  <i class="fa-solid fa-arrow-right fa-beat-fade"></i>
+			</button>
+	</small>
+  </div><!--/bg-body-->
+	
+  <div class="my-3 p-3 p-md-4 bg-body rounded shadow-sm atlas-task-card" style="display: none;">
+  <div class="text-body-secondary">	
+	  
+		<!-- TASK 01 --><!-- TASK 01 --><!-- TASK 01 --><!-- TASK 01 --><!-- TASK 01 --><!-- TASK 01 -->
+	
+		<h6 class="border-bottom pb-2 mb-0">TASK 1: Find time for this.</h6>
+		
+		<br>
+		
+		<p>Let's make a commitment to this program. </p>
+		
+		<p>Your first task <b>will take ~25 minutes</b>, and we know you might not have the time <b>right now</b>.</p>
+		
+		<p>Let's pick a day for you to start the challenge with a 25-minute session where we'll teach you everything you need to know about meltdowns and tantrums.</p>
+		
+		<!--<br />
+		<h3><b>Note: Don't worry!</b></h3>
+		<br />
+		<p> the rest of the days of this challenge will only require <b>10-15 minutes per day</b>, which on most days will happen as part of your daily routine, so the biggest "chunk" of time is just this first part.</p>-->
+		
+		<div class="say_when_div">
+			<input type="datetime-local" id="event-date" name="event-date" class="form-control">
+			  <br>
+			  <p><button class="btn btn-info" id="add-to-calendar">Add to Calendar</button></p>
+			  
+			
+			  <script>
+				  // Set default value to tomorrow night at 8:00 PM
+				  var defaultDate = new Date();
+				  defaultDate.setDate(defaultDate.getDate() + 1);
+				  defaultDate.setHours(20, 0, 0, 0);
+				  document.getElementById('event-date').value = formatDate(defaultDate);
+			  
+				  document.getElementById('add-to-calendar').addEventListener('click', function() {
+					var dateInput = document.getElementById('event-date').value;
+					var eventDate = new Date(dateInput);
+			  
+					var eventDetails = {
+					  title: '🏆 Parenting Time',
+					  start: eventDate.toISOString().replace(/-|:|\.\d+/g, ''),
+					  end: eventDate.toISOString().replace(/-|:|\.\d+/g, ''),
+					  description: 'Event added from Atlas Mission parenting course.'
+					};
+			  
+					if (navigator.share) {
+					  navigator.share({
+						title: eventDetails.title,
+						text: eventDetails.description,
+						url: 'https://example.com/event?start=' + eventDetails.start + '&end=' + eventDetails.end
+					  })
+					  .then(() => console.log('Event shared successfully.'))
+					  .catch((error) => console.log('Error sharing event:', error));
+					} else {
+					  var googleCalendarUrl = 'https://www.google.com/calendar/render?action=TEMPLATE' +
+						'&text=' + encodeURIComponent(eventDetails.title) +
+						'&dates=' + eventDetails.start + '/' + eventDetails.end +
+						'&details=' + encodeURIComponent(eventDetails.description);
+			  
+					  window.open(googleCalendarUrl, '_blank');
+					}
+				  });
+			  
+				  function formatDate(date) {
+					var year = date.getFullYear();
+					var month = String(date.getMonth() + 1).padStart(2, '0');
+					var day = String(date.getDate()).padStart(2, '0');
+					var hours = String(date.getHours()).padStart(2, '0');
+					var minutes = String(date.getMinutes()).padStart(2, '0');
+					return year + '-' + month + '-' + day + 'T' + hours + ':' + minutes;
+				  }
+				</script>
+		</div><br>
+		  
+		<div class="you_chose_time" style="display: none;">
+			  
+			  <h5>Great!</h5>
+			  
+			  <p>On [Sunady, January 12th at 8PM] come back here and </p>
+			  <p>Consider <a href="">adding this to your calendar</a>, and setting a reminder on your phone.</p>
+			  
+		  </div>
+		
+  </div>
+  <hr>
+  <small class="d-block text-end mt-3">
+	  Or &nbsp;&nbsp;
+		<button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+			I'm ready to start NOW! &nbsp;
+			<i class="fa-solid fa-arrow-right"></i>
+		  </button>
+  </small>
+  </div><!--/bg-body-->
+	
+  <div class="my-3 p-3 p-md-4 bg-body rounded shadow-sm atlas-task-card" style="display: none;">
+  <div class="text-body-secondary">	
+		<!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> 
+		<h6 class="border-bottom pb-2 mb-0">TASK 2: Understand Meltdowns.</h6>
+		
+			<br>
+			
+			<p><img style="width:100%;" src="vid_placeholder.png"></p>
+			<!--
+			Sue video: day 1 - revision - time stamps:
+			
+				07:50 Understanding Meltdowns.
+				09:05 Part 2 (Now the next thing...)
+				10:08 Part 3 (Now speaking of body language...)
+				11:53 "with that, let's get going"
+				
+				Topics: 
+				
+				Part 1 = This program
+				Part 2 = Children need help communicating
+				Part 3 = Our role / body language
+			-->	
+			
+			<p>Please watch this 14-minute lesson. After watching you will know:</p>
+			
+			<p>Here's what we'll cover:</p>
+			<ol>
+				<li>A quick introductions from Sue. <span>00:00</span></li>
+				<li>Why children have tantrums and meltdowns. <span>07:50</span></li>
+				<li>Our role as parents. <span>09:05</span></li>
+				<li>Your next step. <span>11:53</span></li>
+			</ol>
+			
+			<p>💡 Quick tip: are you in a rush? You can watch the video at a higher speed by clicking the ⚙️ icon on the palyer!</p>
+			
+			<p>Our next step will be customizing the rest of the program to you and your child. Hit the "Next" button when you're ready!</p>
+		
+</div>
+<hr>
+<small class="d-block text-end mt-3">
+	  <button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+			<i class="fa-regular fa-circle-check"></i> &nbsp; Watched! Continue to customization! &nbsp;
+			<i class="fa-solid fa-arrow-right"></i>
+	  </button>
+	  <!--<br /><br />
+	  <button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+				<i class="fa-regular fa-circle-check"></i> &nbsp; Watched! Save & continue later
+	   </button>-->
+</small>
+  </div><!--/bg-body-->
+	
+  <div class="my-3 p-3 p-md-4 bg-body rounded shadow-sm bg-body" style="display: none;">
+  <div class="text-body-secondary">	
+		
+		<!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> 
+			
+			<h6 class="border-bottom pb-2 mb-0">TASK 3: Customize Your Program.</h6>
+			
+			<style type="text/css">
+				.customize_quiz_box {margin:20px 0;}
+				.customize_quiz .rounded-pill {font-size:16px; font-weight:normal; margin:10px; padding:10px 20px;}
+				
+				.customize_quiz_box {text-align:center; padding-top:40px; border:0px solid;}
+				.customize_quiz_box .btn {border-radius:82px; font-size:20px; padding:10px 20px; margin:10px;}
+				
+				@media (max-width: 600px) { 
+				
+					.customize_quiz .rounded-pill {margin:4px; padding:6px 14px;}
+					 .customize_quiz_box .btn {border-radius:182px; font-size:16px; padding:6px 14px; margin:4px;}
+					 
+				}
+				  
+				  
+				 .customize_quiz_box .btn-outline-primary {border-color:#1d3c72; color: #1d3c72; }
+				 .customize_quiz_box .btn-outline-primary:hover {background-color: #1d3c72; color:white;}
+				 .customize_quiz_box .btn-outline-primary.active {color: #fff; background-color: #1d3c72}
+				
+			</style>
+			<div class="customize_quiz">
+				<div class="customize_quiz_box">
+					<p>What is your child's age group?</p>
+					
+					<span class="btn btn-outline-primary age_click child_age">2</span>
+					<span class="btn btn-outline-primary age_click child_age">3</span>
+					<span class="btn btn-outline-primary age_click child_age">4</span>
+					<span class="btn btn-outline-primary age_click child_age">5</span>
+					<span class="btn btn-outline-primary age_click child_age">6</span>
+					
+					
+					<p></p><br><br>
+				</div>
+				
+				<div class="customize_quiz_box" style="display: none;">
+					<p>Tell us about you (optional) - check every relevant tag:</p>
+					
+					<span class="btn btn-outline-primary about_family">Single parent</span>
+					<span class="btn btn-outline-primary about_family">Mom</span>
+					<span class="btn btn-outline-primary about_family">Dad</span>
+					<span class="btn btn-outline-primary about_family">Guardian</span>
+					<span class="btn btn-outline-primary about_family">Adoptive Parent</span>
+					<span class="btn btn-outline-primary about_family">Divorced</span>
+					
+					<br><br>
+					<p style="text-align:right;">
+					<button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-quiz-step" type="button" id="about_family_button">
+						  Next &nbsp;
+						  <i class="fa-solid fa-arrow-right"></i>
+					</button>
+					</p><br><br>
+				</div>
+				
+				<div class="customize_quiz_box" style="display: none;">
+					<p>How often do tantrums and meltdowns happen?</p>
+					
+					<span class="btn btn-outline-primary tantrum_frequency">Every day</span>
+					<span class="btn btn-outline-primary tantrum_frequency">Once a week</span>
+					<span class="btn btn-outline-primary tantrum_frequency">A few times every day</span>
+					<span class="btn btn-outline-primary tantrum_frequency">2-3 times per week</span>
+					<span class="btn btn-outline-primary tantrum_frequency">Less than once a week</span>
+					
+					<br><br>
+					<p style="text-align:right;">
+					<button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-quiz-step" type="button" id="tantrum_frequency_button">
+						  Continue customizing &nbsp;
+						  <i class="fa-solid fa-arrow-right"></i>
+					</button>
+					</p><br><br>
+				</div>
+				
+				<div class="customize_quiz_box" style="display: none;">
+					<p>Ok that's perfectly normal!</p>
+					
+					<p>Where do they usually happen? (check everything that's relevant)</p>
+					<span class="btn btn-outline-primary tantrum_location">At home</span>
+					<span class="btn btn-outline-primary tantrum_location">In public</span>
+					<span class="btn btn-outline-primary tantrum_location">On the way to school</span>
+					<span class="btn btn-outline-primary tantrum_location">When family visits</span>
+					<span class="btn btn-outline-primary tantrum_location">When we visit family</span>
+					
+					<br><br>
+					<p style="text-align:right;">
+					<button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-quiz-step" type="button" id="tantrum_location_button">
+						  Continue customizing &nbsp;
+						  <i class="fa-solid fa-arrow-right"></i>
+					</button>
+					</p><br><br>
+				</div>
+				
+				<div class="customize_quiz_box" style="display: none;">
+					<p>Tell us about your values (optional) - check every relevant tag: <small style="display:block;"><small>(Your private information is safe. This will allow us to customize our advice and tasks to your lifestyle).</small></small></p>
+					
+					
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-leaf"></i> &nbsp; Vegan</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-passport"></i> &nbsp; Digital Nomads</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-passport"></i> &nbsp; Career-focused</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-passport"></i> &nbsp; Entreprenuers</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-brands fa-envira"></i> &nbsp; Vegetarian</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-om"></i> &nbsp; Buddhist</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-flask"></i> &nbsp; Science</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-cross"></i> &nbsp; Christian</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-star-and-crescent"></i> &nbsp; Muslim</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-book-tanakh"></i> &nbsp; Jewish</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-place-of-worship"></i> &nbsp; Other Religion</span>
+					<span class="btn btn-outline-primary family_values"><i class="fa-solid fa-spaghetti-monster-flying"></i> &nbsp; Atheist</span>
+					
+					<br><br>
+					<p style="text-align:right;">
+					<button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-quiz-step" type="button" id="family_values_button">
+						  Continue customizing &nbsp;
+						  <i class="fa-solid fa-arrow-right"></i>
+					</button>
+					</p><br><br>
+				</div>
+				
+				<div class="customize_quiz_box" style="display: none;">
+					
+					<h2>Customization complete! 🎉</h2>
+					
+					<p>We've saved your preferences and will try our best to tailor the rest of the program, including our ideas, suggestions, and the <b>Emergency Button tool</b>, to best fit your needs.
+					</p>
+					
+					<br>
+						
+					<p>
+					💡If circumstances change, such as the frequency of tantrums, you can easily update your preferences in the settings menu at any time.
+					</p>
+					
+				</div>
+
+			</div>
+			
+			<p>
+				<small>💡 You can change these preferences later.</small>
+				<br>
+				<small>🔒 Your private information is safe.</small>
+				
+			</p>
+			
+				
+</div>
+<hr>
+<small class="d-block text-end mt-3">
+	  <button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+		  <i class="fa-regular fa-square-check"></i> &nbsp; Done! &nbsp; Next!
+		  <i class="fa-solid fa-arrow-right"></i>
+		</button>
+</small>
+  </div><!--/bg-body-->
+	
+  <div class="my-3 p-3 p-md-4 bg-body rounded shadow-sm atlas-task-card" style="display: none;">
+  <div class="text-body-secondary">	
+			
+			<!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> 
+				<h6 class="border-bottom pb-2 mb-0">TASK 4: Reward Yourself.</h6>
+				
+					<br><br><br><br>
+					
+					<h1 style="text-align:center;">🥳</h1>
+					<p style="text-align:center;">You did good!</p>
+				
+					<p style="text-align:center;">You're ready for day 2!</p>
+					
+					
+					<br><br><br><br>
+		
+  </div>
+  <hr>
+  <small class="d-block text-end mt-3">
+	  <a class="btn btn-outline-primary d-inline-flex align-items-center" type="button" href="?l=2">
+		  Start DAY 2! &nbsp;
+		  <i class="fa-solid fa-arrow-right"></i>
+		</a>
+</small>
+
+</div>	  	  	  	  	  	  	  
+	  
+	  
+
+
+
+
+
+<!-- remove these br -->
+<!-- 
+<br><br><br><br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+
+<br><br><br><br><br><br><br><br><br> -->
+
+
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm" style="display: none;">
+	<h6 class="border-bottom pb-2 mb-0">Recent updates</h6>
+	<div class="d-flex text-body-secondary pt-3">
+	  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+	  <p class="pb-3 mb-0 small lh-sm border-bottom">
+		<strong class="d-block text-gray-dark">@username</strong>
+		Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
+	  </p>
+	</div>
+	<div class="d-flex text-body-secondary pt-3">
+	  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+	  <p class="pb-3 mb-0 small lh-sm border-bottom">
+		<strong class="d-block text-gray-dark">@username</strong>
+		Tag badges with "x" from here:
+		https://getbootstrap.com/docs/5.3/examples/badges/
+	  </p>
+	  
+	  
+	  
+	  
+	  
+	</div>
+	<div class="d-flex text-body-secondary pt-3">
+	  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+	  <p class="pb-3 mb-0 small lh-sm border-bottom">
+		<strong class="d-block text-gray-dark">@username</strong>
+		This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
+	  </p>
+	</div>
+	<small class="d-block text-end mt-3">
+	  <a href="#">All updates</a>
+	</small>
+  </div>
+
+  <div class="my-3 p-3 bg-body rounded shadow-sm" style="display: none;">
+	<h6 class="border-bottom pb-2 mb-0">Suggestions</h6>
+	<div class="d-flex text-body-secondary pt-3">
+	  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+	  <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+		<div class="d-flex justify-content-between">
+		  <strong class="text-gray-dark">Full Name</strong>
+		  <a href="#">Follow</a>
+		</div>
+		<span class="d-block">@username</span>
+	  </div>
+	</div>
+	<div class="d-flex text-body-secondary pt-3">
+	  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+	  <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+		<div class="d-flex justify-content-between">
+		  <strong class="text-gray-dark">Full Name</strong>
+		  <a href="#">Follow</a>
+		</div>
+		<span class="d-block">@username</span>
+	  </div>
+	</div>
+	<div class="d-flex text-body-secondary pt-3">
+	  <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+	  <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+		<div class="d-flex justify-content-between">
+		  <strong class="text-gray-dark">Full Name</strong>
+		  <a href="#">Follow</a>
+		</div>
+		<span class="d-block">@username</span>
+	  </div>
+	</div>
+	<small class="d-block text-end mt-3">
+	  <a href="#">All suggestions</a>
+	</small>
+  </div>
+</main>
+<!-- adding 1 br to style it correctly -->
+<br>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="./js/controller.js"></script>
+	
+	<script>
+
+		$(function (){
+			
+			
+			$(window).bind('scroll', function() {
+        
+        if ($(window).scrollTop() > 25) {
+            console.log("Scrolling...");
+					$('.navbar-brand').fadeOut();
+					// i changed this
+          $('.navbar').css('background','rgba(0,0,0,0.8)');
+
+        }
+        else {
+          $('.navbar-brand').fadeIn();
+					// and changed this
+          $('.navbar').css('background','transparent');
+				  }
+			  });
+			  
+			  
+			var taskNumber = "1";
+			
+			
+			$('.bg-body').hide();
+			
+			// Show only the specified task div
+			if(taskNumber) {
+				// Convert taskNumber to integer and adjust for zero-based index
+				var indexToShow = parseInt(taskNumber) - 1;
+				$('.bg-body').eq(indexToShow).delay(80).fadeIn('fast');
+			} else {
+				// If no task number, show the first div
+				$('.bg-body').first().delay(80).fadeIn('fast');
+			}
+			
+			
+			
+					
+			$('.btn-next-step').click(function() {
+				var currentDiv = $(this).closest('.bg-body');
+				var nextDiv = currentDiv.next('.bg-body');
+		
+				// Hide current div and show the next one
+				currentDiv.hide();
+				nextDiv.fadeIn();
+				$(window).scrollTop(0);
+		
+				// Calculate the index of the next div
+				var nextIndex = $('.bg-body').index(nextDiv) + 1;
+		
+				// Update the URL with the new 'tsk' parameter
+				if (nextDiv.length) {
+					var newUrl = updateQueryStringParameter(window.location.href, 'tsk', nextIndex);
+					window.history.pushState({path: newUrl}, '', newUrl);
+				}
+				$(window).scrollTop(0); // Scroll to top when done...
+			});
+			
+			$('.customize_quiz_box').slice(1).hide();
+			$('.btn-next-quiz-step').click(function() {
+				var currentDiv = $(this).closest('.customize_quiz_box');
+				currentDiv.hide();
+				currentDiv.next('.customize_quiz_box').fadeIn();
+				$(window).scrollTop(0);
+			});
+			$('.age_click').click(function(){
+				var currentDiv = $(this).closest('.customize_quiz_box');
+				currentDiv.hide();
+				currentDiv.next('.customize_quiz_box').fadeIn();
+				$(window).scrollTop(0);
+			});
+			
+			$('.you_chose_time').hide();
+			$('.cal_placeholder').click(function(){
+				$(this).slideUp('slow').hide();
+				$('.you_chose_time').fadeIn();
+				return false;
+			});
+			
+			$('.list-group').on('click', '.like-btn', function(e) {
+				  e.preventDefault();
+				  $(this).closest('.list-group-item').toggleClass('active');
+				});
+			
+				$('.list-group').on('click', '.remove-btn', function(e) {
+				  e.preventDefault();
+				  $(this).closest('.list-group-item').slideUp('fast');
+				});
+			
+			$('.age_click').click(function(){
+				
+			});
+			$('.customize_quiz_box .btn').click(function() {
+				  $(this).toggleClass('active');
+			});
+			
+			/* TRACK EVERYTHING TO GA! (Fix broken code)
+			$('body').on('click', '*', function(e) {
+				var element = $(this);
+			
+				// Construct an event label based on the element's attributes
+				var label = element.attr('id') || element.attr('class') || element.prop('tagName');
+			
+				// Send the event to GA4
+				gtag('event', 'click', {
+					'event_category': 'All Clicks',
+					'event_label': label
+			});
+			*/
+			
+			
+			
+			/* Triggers - on day 2(?) */
+			
+			$('.btn_never').click(function() {
+				
+				$(this).closest('.trigger_box').css('border', '2px solid green').css('opacity', '0.3');
+				$(this).closest('h3').css('font-size', '12px');
+				$(this).closest('h3').attr('style', 'font-size: 14px !important');
+				$(this).closest('.trigger_box').children('.symptoms').slideUp();
+				$(this).closest('.trigger_box').children('.sayings').slideUp();
+				$(this).closest('.trigger_box').children('img').slideUp();
+				$(this).closest('.trigger_box').children('.buttons').slideUp();
+			});
+		
+			$('.btn_rarely').click(function() {
+				$(this).closest('.trigger_box').css('border', '2px solid orange');
+				$(this).closest('.trigger_box').children('.symptoms').slideUp();
+				$(this).closest('.trigger_box').children('.sayings').slideUp();
+				$(this).closest('.trigger_box').children('img').slideUp();
+				$(this).closest('.trigger_box').children('.buttons').slideUp();
+			});
+		
+			$('.btn_often').click(function() {
+				$(this).closest('.trigger_box').children('.symptoms').slideUp();
+				$(this).closest('.trigger_box').children('.sayings').slideUp();
+				$(this).closest('.trigger_box').children('img').slideUp();
+				$(this).closest('.trigger_box').children('.buttons').slideUp();
+				$(this).closest('.trigger_box').addClass('alert danger');
+				var triggerBox = $(this).closest('.trigger_box');
+				triggerBox.css('border', '2px solid red');
+		
+				var triggerTopic = triggerBox.find('h3').text();
+				var tip = triggerBox.find('.action_items').text();
+		
+				var listItem = `<li>You mentioned that <b class="trigger_topic">${triggerTopic}</b> related triggers happen a lot. Here's a quick tip to help with that: ${tip}</li>`;
+				
+				$('.some_tips').append(listItem);
+				
+			});
+			
+			
+			
+			
+			/* NOTE SURE WHAT THIS IS: */		
+			
+			$('.scenario_box h4').click(function() {
+				$(this).closest('.scenario_box').children('.buttons').slideToggle();
+				$(this).closest('.scenario_box').children('.scenario_content').slideToggle();
+			});
+			  
+			  
+			/* DAY 3 - Coping Skills Talks */
+			  
+			  $('.mech_more').hide();
+			 $('.btn_mech_more').click(function() {
+				  $(this).closest('.mech_box').children('.mech_more').slideToggle();
+			 });
+			 $('.btn_mech_save').click(function() {
+				 $(this).removeClass('btn-outline-success').addClass('btn-success');
+			 });
+			 $('.btn_mech_del').click(function() {
+				  $(this).closest('.mech_box').css('border', '1px solid yellow').css('opacity', '0.3');
+				  $(this).closest('.mech_box').children('div').slideUp();
+				  $(this).closest('.mech_box').children('img').slideUp();
+			 });
+
+				
+		});
+		
+		
+		
+		
+		// Function to update query string parameter
+		function updateQueryStringParameter(uri, key, value) {
+			var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+			var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+			if (uri.match(re)) {
+				return uri.replace(re, '$1' + key + "=" + value + '$2');
+			} else {
+				return uri + separator + key + "=" + value;
+			}
+		}
+		
+	</script>
+	
+
+</body></html>
